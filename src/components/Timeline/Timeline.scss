@@ -1,0 +1,105 @@
+.timeline {
+  $circle-size: 530px;
+
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px;
+
+  &__title {
+    font-size: 56px;
+    color: #42567a;
+    margin-bottom: 56px;
+
+    @media (max-width: 768px) {
+      font-size: 36px;
+    }
+  }
+
+  &__years {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    font-size: 200px;
+    line-height: 160px;
+
+    @media (max-width: 768px) {
+      font-size: 96px;
+      line-height: 120px;
+    }
+  }
+
+  &__year {
+    &--start {
+      color: #5d5fef;
+    }
+
+    &--end {
+      color: #ef5da8;
+    }
+  }
+
+  &__circle {
+    width: $circle-size;
+    height: $circle-size;
+    margin: 0 auto;
+    position: relative;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+    }
+  }
+
+  &__circle-path {
+    stroke: #42567a;
+    stroke-width: 1;
+    opacity: 0.1;
+  }
+
+  &__dot {
+    fill: #42567a;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &--active {
+      fill: #f4f5f9;
+      stroke: #303e58;
+      stroke-width: 1;
+    }
+  }
+
+  &__slider {
+    margin-top: 56px;
+  }
+
+  &__events {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 80px;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__event {
+    &-year {
+      color: #3877ee;
+      font-size: 25px;
+      margin-bottom: 15px;
+      display: block;
+    }
+
+    &-text {
+      color: #42567a;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+}
